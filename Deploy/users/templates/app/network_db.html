@@ -1,0 +1,162 @@
+{% extends 'users/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Network Threat   Predictions</h3>
+        <a href="{% url 'users-home' %}" class="btn btn-custom mb-3">
+            Home
+        </a>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>flow_duration</th>
+                    <th>fwd_pkts_tot</th>
+                    <th>bwd_pkts_tot</th>
+                    <th>fwd_data_pkts_tot</th>
+                    <th>bwd_data_pkts_tot</th>
+                    <th>fwd_pkts_per_sec</th>
+                    <th>bwd_pkts_per_sec</th>
+                    <th>flow_pkts_per_sec</th>
+                    <th>down_up_ratio</th>
+                    <th>fwd_header_size_tot</th>
+                    <th>fwd_header_size_min</th>
+                    <th>fwd_header_size_max</th>
+                    <th>bwd_header_size_tot</th>
+                    <th>bwd_header_size_min</th>
+                    <th>bwd_header_size_max</th>
+                    <th>flow_FIN_flag_count</th>
+                    <th>flow_SYN_flag_count</th>
+                    <th>flow_RST_flag_count</th>
+                    <th>fwd_PSH_flag_count</th>
+                    <th>bwd_PSH_flag_count</th>
+                    <th>flow_ACK_flag_count</th>
+                    <th>fwd_URG_flag_count</th>
+                    <th>bwd_URG_flag_count</th>
+                    <th>flow_CWR_flag_count</th>
+                    <th>flow_ECE_flag_count</th>
+                    <th>fwd_pkts_payload_min</th>
+                    <th>fwd_pkts_payload_max</th>
+                    <th>fwd_pkts_payload_tot</th>
+                    <th>fwd_pkts_payload_avg</th>
+                    <th>fwd_pkts_payload_std</th>
+                    <th>bwd_pkts_payload_min</th>
+                    <th>bwd_pkts_payload_max</th>
+                    <th>bwd_pkts_payload_tot</th>
+                    <th>bwd_pkts_payload_avg</th>
+                    <th>bwd_pkts_payload_std</th>
+                    <th>flow_pkts_payload_min</th>
+                    <th>flow_pkts_payload_max</th>
+                    <th>flow_pkts_payload_tot</th>
+                    <th>flow_pkts_payload_avg</th>
+                    <th>flow_pkts_payload_std</th>
+                    <th>fwd_bulk_packets</th>
+                    <th>bwd_bulk_packets</th>
+                    <th>fwd_bulk_rate</th>
+                    <th>bwd_bulk_rate</th>
+                    <th>fwd_init_window_size</th>
+                    <th>bwd_init_window_size</th>
+                    <th>fwd_last_window_size</th>
+                    <th>Output</th>
+                </tr>
+                {% for record in data %}
+                <tr>
+                    <td>{{ record.flow_duration }}</td>
+                    <td>{{ record.fwd_pkts_tot }}</td>
+                    <td>{{ record.bwd_pkts_tot }}</td>
+                    <td>{{ record.fwd_data_pkts_tot }}</td>
+                    <td>{{ record.bwd_data_pkts_tot }}</td>
+                    <td>{{ record.fwd_pkts_per_sec }}</td>
+                    <td>{{ record.bwd_pkts_per_sec }}</td>
+                    <td>{{ record.flow_pkts_per_sec }}</td>
+                    <td>{{ record.down_up_ratio }}</td>
+                    <td>{{ record.fwd_header_size_tot }}</td>
+                    <td>{{ record.fwd_header_size_min }}</td>
+                    <td>{{ record.fwd_header_size_max }}</td>
+                    <td>{{ record.bwd_header_size_tot }}</td>
+                    <td>{{ record.bwd_header_size_min }}</td>
+                    <td>{{ record.bwd_header_size_max }}</td>
+                    <td>{{ record.flow_FIN_flag_count }}</td>
+                    <td>{{ record.flow_SYN_flag_count }}</td>
+                    <td>{{ record.flow_RST_flag_count }}</td>
+                    <td>{{ record.fwd_PSH_flag_count }}</td>
+                    <td>{{ record.bwd_PSH_flag_count }}</td>
+                    <td>{{ record.flow_ACK_flag_count }}</td>
+                    <td>{{ record.fwd_URG_flag_count }}</td>
+                    <td>{{ record.bwd_URG_flag_count }}</td>
+                    <td>{{ record.flow_CWR_flag_count }}</td>
+                    <td>{{ record.flow_ECE_flag_count }}</td>
+                    <td>{{ record.fwd_pkts_payload_min }}</td>
+                    <td>{{ record.fwd_pkts_payload_max }}</td>
+                    <td>{{ record.fwd_pkts_payload_tot }}</td>
+                    <td>{{ record.fwd_pkts_payload_avg }}</td>
+                    <td>{{ record.fwd_pkts_payload_std }}</td>
+                    <td>{{ record.bwd_pkts_payload_min }}</td>
+                    <td>{{ record.bwd_pkts_payload_max }}</td>
+                    <td>{{ record.bwd_pkts_payload_tot }}</td>
+                    <td>{{ record.bwd_pkts_payload_avg }}</td>
+                    <td>{{ record.bwd_pkts_payload_std }}</td>
+                    <td>{{ record.flow_pkts_payload_min }}</td>
+                    <td>{{ record.flow_pkts_payload_max }}</td>
+                    <td>{{ record.flow_pkts_payload_tot }}</td>
+                    <td>{{ record.flow_pkts_payload_avg }}</td>
+                    <td>{{ record.flow_pkts_payload_std }}</td>
+                    <td>{{ record.fwd_bulk_packets }}</td>
+                    <td>{{ record.bwd_bulk_packets }}</td>
+                    <td>{{ record.fwd_bulk_rate }}</td>
+                    <td>{{ record.bwd_bulk_rate }}</td>
+                    <td>{{ record.fwd_init_window_size }}</td>
+                    <td>{{ record.bwd_init_window_size }}</td>
+                    <td>{{ record.fwd_last_window_size }}</td>
+                    <td>{{ record.label }}</td>
+                </tr>
+                {% endfor %}
+             </table>
+        </div>
+    </div>
+
+        
+    
+</body>
+</html>
+
+{% endblock content %}
