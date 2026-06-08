@@ -1,5 +1,4 @@
 # Threat-Detection-Using-Machine-Learning-Techniques
-# Threat Detection Using Machine Learning
 
 ## Overview
 
@@ -128,19 +127,19 @@ http://127.0.0.1:8000
 
 ### Login Page
 
-Add screenshot here.
+![Login_page](Screenshots/Login_page.png)
 
-### Dashboard
+### Database
 
-Add screenshot here.
+![Database](Screenshots/Database.png)
 
 ### Threat Detection Results
 
-Add screenshot here.
+![Results](Screenshots/Results.png)
 
 ### User Profile
 
-Add screenshot here.
+![Userprofile](Screenshots/Userprofile.png)
 
 ## Learning Outcomes
 
